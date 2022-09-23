@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/Image';
 import { urlFor } from '../lib/client';
 
 const HeroBanner = ({ heroBanner }) => {
