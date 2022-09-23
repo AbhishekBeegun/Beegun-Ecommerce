@@ -18,7 +18,7 @@ const ProductDetails = ({ product,products}) => {
             <div>
                 <div className="image-container">
                     <img src={urlFor(image && image[index])
-                    } className="product-detail-image"/>
+                    } className="product-detail-image" alt=""/>
                 </div>
                 <div className="small-images-container">
                     {image?.map((item, i) => (
@@ -29,7 +29,7 @@ const ProductDetails = ({ product,products}) => {
                         'small-image selected-image':
                         'small-image'}
                         onMouseEnter={() => setIndex(i)}
-                        />
+                        alt =""/>
                     ))}
                     </div> 
             </div>
