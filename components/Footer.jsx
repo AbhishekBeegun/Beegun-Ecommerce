@@ -4,7 +4,7 @@ import { AiFillInstagram ,AiOutlineTwitter } from 'react-icons/ai';
 const Footer = () => {
   return (
     <div className="flex flex-col justify-center items-center h-[60vh] lg:h-[100vh] text-white bg-black">
-      <div className="w-[200px] p-10">
+      <div className="w-[200px]">
         <img src="https://cdn.sanity.io/images/d5pxilw4/production/88934fbadc6868394ef60d8369c2ce378c01428a-347x96.png" alt="LOGO" />
        </div>
       <p className="text-xl p-10">BEEGUN Ecommerce © 2023</p>

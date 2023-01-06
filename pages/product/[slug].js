@@ -35,7 +35,7 @@ const ProductDetails = ({ product,products}) => {
                 </div> 
             </div>
 
-            <div className="flex flex-col items-center lg:w-1/2 ">
+            <div className="flex flex-col items-center justify-evenly lg:h-[90vh] lg:w-1/2">
                 <h1 className="text-3xl font-medium p-5">{name}</h1>
                 <div className="flex items-center gap-5 p-2">
                     <div className="flex text-yellow-600">
@@ -45,11 +45,11 @@ const ProductDetails = ({ product,products}) => {
                         <AiFillStar/>
                         <AiOutlineStar/>
                     </div>
-                    <p className="text-xs">
+                    <p className="text-[0.5rem] lg:text-[0.7rem]">
                         (249)
                     </p>
                 </div>
-                <p className="text-2xl font-medium p-8">Rs {price}</p>
+                <p className="text-2xl font-semibold p-8">Rs {price}</p>
                 {/*<div className="quantity">
                     <h3>Quantity</h3>
                     <p className ="quantity-desc">
@@ -61,19 +61,19 @@ const ProductDetails = ({ product,products}) => {
                      onClick={incQty}><AiOutlinePlus/></span>
                     </p> problem kan add 2 fois add to cart akz item.name
                         </div>*/}
-                <div className="flex justify-evenly w-10/12 text-white">
+                <div className="flex gap-4 items-center w-11/12 justify-center text-white">
                  <button type="button"
-                 className="bg-yellow-500 py-4 px-10 rounded-lg font-semibold hover:scale-110 transition-all ease-in-out" 
-                 onClick={() => onAdd(product,qty)}>MET DAN KABA</button>
+                 className="bg-yellow-500 px-10 py-5 rounded-lg font-semibold hover:scale-110 transition-all ease-in-out" 
+                 onClick={() => onAdd(product,qty)}>MET DAN KADI</button>
 
                  <button type="button"
-                 className="bg-red-500 py-4 px-12 rounded-lg font-semibold hover:scale-110 transition-all ease-in-out" 
+                 className="bg-red-500 px-10 py-5 rounded-lg font-semibold hover:scale-110 transition-all ease-in-out" 
                  onClick={handleBuy}>Buy NOW</button>
                 </div>
 
                 <div className="flex flex-col items-center p-8">
-                <h4 className="p-5 text-xl">Details : </h4>
-                <p className="text-slate-500 text-center">{details}</p>
+                <h4 className="p-5 text-xl">Details :</h4>
+                <p className="text-slate-400 text-center h-[300px] overflow-scroll">{details}</p>
                 </div>
             </div>
 

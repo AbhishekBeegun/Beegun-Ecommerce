@@ -6,8 +6,8 @@ const FooterBanner = ({FooterBanner:{discount,largeText1,largeText2,
   saleTime,smallText,midText,desc,product,buttonText,
   image}}) => {
   return (
-    <div className="relative h-[50vh] bg-cyan-500 text-white p-2">
-      <div className="flex flex-col lg:flex-row justify-around h-full p-10">
+    <div className="relative h-[50vh] bg-cyan-500 text-white">
+      <div className="flex flex-col lg:flex-row justify-around h-full p-5 lg:p-10">
         <div className="flex flex-col justify-evenly">
           <p>{discount}</p>
           <h3 className="text-6xl font-semibold lg:text-[6rem]">
@@ -24,7 +24,7 @@ const FooterBanner = ({FooterBanner:{discount,largeText1,largeText2,
 
         </div>
 
-        <img src={urlFor(image)} className="absolute top-20 right-0 lg:right-[40%] w-[20rem] h-[20rem] lg:w-[25rem] lg:h-[25rem]" alt="" />
+        <img src={urlFor(image)} className="absolute top-20 right-0 lg:right-[40%] w-[10rem] h-[10rem] lg:w-[25rem] lg:h-[25rem] sm:h-[20rem] sm:w-[20rem]" alt="" />
       </div>
     </div>
   )

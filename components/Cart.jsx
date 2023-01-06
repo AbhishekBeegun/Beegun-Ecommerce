@@ -32,10 +32,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="fixed right-0 top-0 z-10 w-[100vw] bg-[rgba(255,0,0,0.5)] transition ease-in-out duration-100" >
-     <div className="h-[100vh] lg:w-[600px] bg-white lg:float-right p-10 flex flex-col">
+    <div className="fixed right-0 top-0 z-10 h-[100vh] w-[100vw] bg-[rgba(0,0,0,0.5)] transition ease-in-out duration-100" >
+     <div className="lg:w-[600px] max-h-[700px] lg:rounded-2xl overflow-scroll bg-white lg:float-right p-10 flex flex-col">
       <button type="button"
-      className="flex gap-3 items-center cursor-pointer lg:hover:scale-125 transition-all py-4"
+      className="flex gap-3 items-center cursor-pointer lg:hover:scale-125 transition-all"
       onClick={() => setShowCart(false)}>
       <AiOutlineLeft/>
       <span className="text-lg">Shopping Cart</span>
@@ -43,9 +43,9 @@ const Cart = () => {
       </button>
   {/*if cart vide show that => */}
       {cartItems.length < 1 && (
-        <div className="flex flex-col items-center gap-44 p-20">
-          <AiOutlineShopping size={100}/>
-          <h3 className="text-4xl">Zafer la vide</h3>
+        <div className="flex flex-col items-center gap-5 p-20">
+          <AiOutlineShopping size={80}/>
+          <h3 className="text-4xl">Ena Plass</h3>
           <Link href="/">
             <button 
             type="button"
@@ -57,7 +57,7 @@ const Cart = () => {
         </div>
       )}
        
-       <div className="flex flex-col p-2 min-h-[70vh] max-h-[70vh]">
+       <div className="flex flex-col p-2">
         {cartItems.length >= 1 && cartItems.map((item) => (
           <div className="flex justify-evenly" key={item._id}>
             <img src ={urlFor(item?.image[0])} className="h-[100px] w-[100px]" alt=""/>
@@ -69,7 +69,7 @@ const Cart = () => {
 
 
               <div className="flex">
-                <div className="flex items-center p-5 px-10">
+                <div className="flex items-center p-5">
                   <p className="flex gap-5 items-center">
                   <span className="text-red-500 cursor-pointer"
                      onClick={() => toggleCartItemQuantity(item._id, 'dec')}>

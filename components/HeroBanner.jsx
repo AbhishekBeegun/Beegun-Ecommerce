@@ -24,7 +24,7 @@ const HeroBanner = ({ heroBanner }) => {
                         {heroBanner.buttonText}
                     </button>
                 </Link>
-                <div className="absolute flex flex-col text-white right-10 bottom-10 lg:right-[20%]">
+                <div className="absolute hidden lg:flex flex-col text-white right-10 bottom-10 lg:right-[20%]">
                     <h5 className="text-xl font-normal">Description : </h5>
                     <p className="font-light">{heroBanner.desc}</p>
                 </div>

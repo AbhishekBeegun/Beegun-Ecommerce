@@ -10,7 +10,7 @@ const Home = ({ products , bannerData }) => (
     <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
     {console.log(bannerData)}
     
-    <div className="text-3xl font-semibold p-10 ml-10">
+    <div className="text-3xl font-semibold p-10 text-center">
       <h2>Our Products</h2>
     </div>
 
