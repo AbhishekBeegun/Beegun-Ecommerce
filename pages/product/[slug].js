@@ -8,46 +8,48 @@ import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product,products}) => { 
     const { image, name, details, price } = product;
-
-    const[index,setIndex] =useState (0);
-    const {decQty,incQty,qty,onAdd} = useStateContext();
-
+    const[index,setIndex] = useState (0);
+    const {decQty,incQty,qty,onAdd,setShowCart} = useStateContext();
+    
+    const handleBuy = () => {
+       onAdd(product,qty);
+       setShowCart(true);
+    }
   return (
-    <div>
-        <div className="product-detail-container">
-            <div>
-                <div className="image-container">
+    <div className="flex flex-col w-[100vw]">
+        <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col lg:flex-row lg:w-1/2">
+                <div className="p-10">
                     <img src={urlFor(image && image[index])
-                    } className="product-detail-image" alt=""/>
+                    } className="bg-white lg:w-[500px] hover:bg-[rgb(0,0,0,1)] transition-all ease-in-out duration-[0.3s] rounded-2xl hover:cursor-zoom-in" alt=""/>
                 </div>
-                <div className="small-images-container">
+                <div className="flex lg:flex-col justify-evenly">
                     {image?.map((item, i) => (
-                        <img 
-                        key ={i}
-                        src={urlFor(item)}
-                        className ={i === index ? 
+                        <img key ={i}
+                        src={urlFor(item)} className = {i === index ? 
                         'small-image selected-image':
                         'small-image'}
                         onMouseEnter={() => setIndex(i)}
                         alt =""/>
                     ))}
-                    </div> 
+                </div> 
             </div>
-            <div className="product-detail-desc">
-                <h1>{name}</h1>
-                <div className="reviews">
-                    <div>
+
+            <div className="flex flex-col items-center lg:w-1/2 ">
+                <h1 className="text-3xl font-medium p-5">{name}</h1>
+                <div className="flex items-center gap-5 p-2">
+                    <div className="flex text-yellow-600">
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiOutlineStar/>
                     </div>
-                    <p>
+                    <p className="text-xs">
                         (249)
                     </p>
                 </div>
-                <p className="price">Rs {price}</p>
+                <p className="text-2xl font-medium p-8">Rs {price}</p>
                 {/*<div className="quantity">
                     <h3>Quantity</h3>
                     <p className ="quantity-desc">
@@ -59,33 +61,38 @@ const ProductDetails = ({ product,products}) => {
                      onClick={incQty}><AiOutlinePlus/></span>
                     </p> problem kan add 2 fois add to cart akz item.name
                         </div>*/}
-                <div className="buttons">
+                <div className="flex justify-evenly w-10/12 text-white">
                  <button type="button"
-                 className="add-to-cart" 
+                 className="bg-yellow-500 py-4 px-10 rounded-lg font-semibold hover:scale-110 transition-all ease-in-out" 
                  onClick={() => onAdd(product,qty)}>MET DAN KABA</button>
 
                  <button type="button"
-                 className="buy-now" 
-                 onClick="">Buy NOW</button>
-
+                 className="bg-red-500 py-4 px-12 rounded-lg font-semibold hover:scale-110 transition-all ease-in-out" 
+                 onClick={handleBuy}>Buy NOW</button>
                 </div>
-                <h4>Details:</h4>
-                <p>{details}</p>
+
+                <div className="flex flex-col items-center p-8">
+                <h4 className="p-5 text-xl">Details : </h4>
+                <p className="text-slate-500 text-center">{details}</p>
+                </div>
             </div>
 
         </div>
-        <div className="maylike-products-wrapper">
-            <h2>Enkor Foss Products</h2>
-            <div className="marquee">
-                <div className="maylike-products-container track">
+
+
+        <div className="flex flex-col items-center">
+            <h2 className="text-2xl">Enkor Foss Products</h2>
+            <div className="">
+                <div className="flex py-12 animate-marquee gap-10 whitespace-nowrap w-[180%] hover:pause">
                     {products.map((item)=> (
                         <Product key ={item._id}
                         product={item} />
                     ))}
                 </div>
             </div>
-
         </div>
+
+
     </div>
   )
 }

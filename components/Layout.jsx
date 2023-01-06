@@ -7,14 +7,14 @@ import Footer from './Footer';
 
 const Layout = ({children}) => {
   return (
-    <div className="layout">
+    <div className="p-0">
       <Head>
-        <title> BEEGUN STORE</title>
+        <title> BEEGUN Ecommerce</title>
       </Head>
       <header>
         <Navbar />        
       </header>
-      <main className="main-container">
+      <main className="m-auto overflow-x-hidden w-[100vw]">
         {children}
         <Section />
       </main>
@@ -22,7 +22,6 @@ const Layout = ({children}) => {
 
       <footer>
         <Footer />
-
       </footer>
 
 

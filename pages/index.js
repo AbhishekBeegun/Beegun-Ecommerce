@@ -10,11 +10,11 @@ const Home = ({ products , bannerData }) => (
     <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
     {console.log(bannerData)}
     
-    <div className="products-heading">
-      <h2>Our Product</h2>
+    <div className="text-3xl font-semibold p-10 ml-10">
+      <h2>Our Products</h2>
     </div>
 
-    <div className="products-container">
+    <div className="flex flex-wrap w-full gap-20 justify-center p-10">
       {products?.map(
         (product) => <Product key={product._id} product={product}/>)}
     </div>
